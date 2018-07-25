@@ -25,10 +25,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     this.loading = true;
-    this.user = {
-      email: 'test@tripcraft.com',
-      password: 'Tripcraft_001'
-    };
 
     this.user = {...this.user, subdomain: 'tripcraft'};
     this.userService.login(this.user).subscribe((response) => {
