@@ -1,0 +1,76 @@
+<div class="row justify-content-center">
+  <div class="col-4">
+    <form (ngSubmit)="onSubmit()">
+      <br />
+      <div class="form-group">
+        <label for="hotel_name">Hotel Name</label>
+        <input
+          [(ngModel)]="property.hotel_name"
+          name="hotel_name"
+          type="text"
+          id="hotel_name"
+          class="form-control"
+          placeholder="Mandarin Oriental"
+        />
+      </div>
+      <div class="form-group">
+        <label for="property_type_id">Property Type Id</label>
+        <input
+          [(ngModel)]="property.property_type_id"
+          name="property_type_id"
+          type="number"
+          id="property_type_id"
+          class="form-control"
+          placeholder="1"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Brand Id</label>
+        <input
+          [(ngModel)]="property.brand_id"
+          name="brand_id"
+          type="number"
+          id="brand_id"
+          class="form-control"
+          placeholder="3"
+        />
+      </div>
+      <div class="form-group">
+        <label for="booking_partner_id">Booking Partner Id</label>
+        <input
+          [(ngModel)]="property.booking_partner_id"
+          name="booking_partner_id"
+          type="number"
+          id="booking_partner_id"
+          class="form-control"
+          placeholder="1"
+        />
+      </div>
+      <div class="form-group">
+        <label for="property_status_id">Property Status Id</label>
+        <input
+          [(ngModel)]="property.property_status_id"
+          name="property_status_id"
+          type="number"
+          id="property_status_id"
+          class="form-control"
+          placeholder="1"
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+      >
+        Submit
+      </button>
+      <button
+        (click)="goBack()"
+        type="button"
+        class="btn btn-alert float-right"
+      >
+        Go back
+      </button>
+      <em *ngIf="loading" class="float-right">Loading...</em>
+    </form>
+  </div>
+</div>

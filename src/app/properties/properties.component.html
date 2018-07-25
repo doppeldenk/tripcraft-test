@@ -1,0 +1,41 @@
+<div *ngIf="!properties" class="alert alert-info" role="alert">
+  Loading...
+</div>
+<div *ngIf="properties && !properties.length" class="alert alert-success" role="alert">
+  There are no properties yet,
+  <a routerLink="/properties/new">
+    <strong>click here to add some.</strong>
+  </a>
+</div>
+<table *ngIf="properties && properties.length" class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Hotel Name</th>
+      <th scope="col">Property Type Id</th>
+      <th scope="col">Brand Id</th>
+      <th scope="col">Booking Partner Id</th>
+      <th scope="col">Property Status Id</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let property of properties">
+      <th>{{property.hotel_name}}</th>
+      <th>{{property.property_type_id}}</th>
+      <th>{{property.brand_id}}</th>
+      <th>{{property.booking_partner_id}}</th>
+      <th>{{property.property_status_id}}</th>
+      <td>
+        <button class="btn btn-primary" (click)="updateProperty(property)">Update</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<a class="btn btn-primary" routerLink="/properties/new">Add new property</a>
+<button
+  (click)="goBack()"
+  type="button"
+  class="btn btn-alert float-right"
+>
+  Go back
+</button>
