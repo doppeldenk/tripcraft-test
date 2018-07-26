@@ -15,7 +15,23 @@ import { PropertiesComponent } from './properties/properties.component';
 import { PropertyFormComponent } from './property-form/property-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-import { moduleConfig } from './module-config';
-
-@NgModule(moduleConfig)
-export class AppModule { }
+export const moduleConfig = {
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    TenantsComponent,
+    TenantComponent,
+    PropertiesComponent,
+    PropertyFormComponent,
+    DashboardComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes)
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+};

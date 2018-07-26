@@ -1,5 +1,5 @@
 export default class Tenant {
-  id: number,
-  name: string,
-  subdomain: string
+  id: number;
+  name: string;
+  subdomain: string;
 }

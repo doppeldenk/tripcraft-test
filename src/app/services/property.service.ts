@@ -43,7 +43,7 @@ export class PropertyService {
     return this.http.patch<Property>(`${apiURL.property}/properties/${propertyId}`, body, { headers: this.headers });
   }
 
-  private serialize(data): void {
+  private serialize(data) {
     let body = [];
     for (const prop in data) {
       if (data.hasOwnProperty(prop)) {

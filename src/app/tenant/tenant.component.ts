@@ -18,8 +18,8 @@ export class TenantComponent implements OnInit {
     private tenantService: TenantService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private userService: UserService
-    private location: Location,
+    private userService: UserService,
+    private location: Location
 ) { }
 
   ngOnInit() {

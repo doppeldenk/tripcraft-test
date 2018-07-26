@@ -24,20 +24,20 @@ export class UserService {
       );
   }
 
-  saveUser(data: {}): void {
+  saveUser(data) {
     const { email, accessToken } = data;
     localStorage.setItem('email', email);
     localStorage.setItem('accessToken', accessToken);
   }
 
-  getUser(): void {
+  getUser() {
     return {
       email: localStorage.getItem('email'),
       accessToken: localStorage.getItem('accessToken')
     };
   }
 
-  clearUser(): void {
+  clearUser() {
     localStorage.removeItem('email');
     localStorage.removeItem('accessToken');
   }
