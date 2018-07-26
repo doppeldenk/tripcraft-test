@@ -23,16 +23,16 @@ export class LoginComponent implements OnInit {
     if (user.accessToken) this.router.navigateByUrl('/dashboard');
   }
 
-  onSubmit(): void {
+  onSubmit() {
     this.loading = true;
 
     this.user = {...this.user, subdomain: 'tripcraft'};
-    this.userService.login(this.user).subscribe((response) => {
+    this.userService.login(this.user).subscribe((response: any) => {
       this.userService.saveUser({
         email: this.user.email,
         accessToken: response.access_token
       });
-      this.router.navigateByUrl('/tenants');
+      this.router.navigateByUrl('/dashboard');
     });
   }
 }

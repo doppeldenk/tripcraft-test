@@ -11,7 +11,7 @@ import { PropertyService } from '../services/property.service';
   styleUrls: ['./property-form.component.css']
 })
 export class PropertyFormComponent implements OnInit {
-  property = Property;
+  property = new Property();
   loading = false;
   editing = false;
 
@@ -27,12 +27,12 @@ export class PropertyFormComponent implements OnInit {
         const propertyId = +params['id'];
         if (propertyId) {
           this.editing = true;
-          this.property = PropertyService.data;
+          this.property = this.propertyService.data;
         }
     });
   }
 
-  onSubmit(): void {
+  onSubmit() {
     this.loading = true;
 
     if (this.editing) {

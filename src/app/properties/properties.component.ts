@@ -27,7 +27,7 @@ export class PropertiesComponent implements OnInit {
 
   getProperties(): void {
     this.propertyService.getProperties()
-      .subscribe((response) => {
+      .subscribe((response: any) => {
         this.properties = response.items;
       }, (error) => {
         if (error.status === 401) {
@@ -38,7 +38,7 @@ export class PropertiesComponent implements OnInit {
   }
 
   updateProperty(property: Property) {
-    PropertyService.data = property;
+    this.propertyService.data = property;
     this.router.navigateByUrl(`/properties/edit/${property.id}`);
   }
 

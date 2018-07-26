@@ -27,7 +27,7 @@ export class TenantsComponent implements OnInit {
 
   getTenants(): void {
     this.tenantService.getTenants()
-      .subscribe((response) => {
+      .subscribe((response: any) => {
         this.tenants = response.items;
       }, (error) => {
         if (error.status === 401) {

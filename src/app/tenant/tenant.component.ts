@@ -29,9 +29,9 @@ export class TenantComponent implements OnInit {
     });
   }
 
-  getTenant(tenantId: number): void {
+  getTenant(tenantId: number) {
     this.tenantService.getTenant(tenantId)
-      .subscribe((response) => {
+      .subscribe((response: any) => {
         this.tenant = response.tenant;
       }, (error) => {
         if (error.status === 401) {
@@ -41,7 +41,7 @@ export class TenantComponent implements OnInit {
       });
   }
 
-  goBack(): void {
+  goBack() {
     this.location.back();
   }
 

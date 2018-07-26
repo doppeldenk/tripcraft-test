@@ -1,4 +1,5 @@
 export default class Property {
+  id?: number;
   hotel_name: string;
   property_type_id: number;
   brand_id: number;

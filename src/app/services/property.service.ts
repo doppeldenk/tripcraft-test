@@ -14,6 +14,7 @@ const { apiURL } = Config;
 })
 export class PropertyService {
   public data: Property;
+  private headers;
 
   constructor(
     private http: HttpClient,

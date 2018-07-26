@@ -13,6 +13,8 @@ const { apiURL } = Config;
   providedIn: 'root'
 })
 export class TenantService {
+  private headers;
+  
   constructor(
     private http: HttpClient,
     private userService: UserService
