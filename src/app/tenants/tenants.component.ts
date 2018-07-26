@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
 
 import Tenant from '../classes/tenant';
 import { TenantService } from '../services/tenant.service';
@@ -17,8 +16,7 @@ export class TenantsComponent implements OnInit {
   constructor(
     private tenantService: TenantService,
     private userService: UserService,
-    private router: Router,
-    private location: Location
+    private router: Router
 ) { }
 
   ngOnInit() {
@@ -38,7 +36,7 @@ export class TenantsComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back();
+    this.router.navigateByUrl('/dashboard');
   }
 
 }

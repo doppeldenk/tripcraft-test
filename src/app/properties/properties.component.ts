@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
 
 import Property from '../classes/property';
 import { PropertyService } from '../services/property.service';
@@ -17,15 +16,14 @@ export class PropertiesComponent implements OnInit {
   constructor(
     private propertyService: PropertyService,
     private userService: UserService,
-    private router: Router,
-    private location: Location
+    private router: Router
   ) { }
 
   ngOnInit() {
     this.getProperties();
   }
 
-  getProperties(): void {
+  getProperties() {
     this.propertyService.getProperties()
       .subscribe((response: any) => {
         this.properties = response.items;
@@ -42,8 +40,8 @@ export class PropertiesComponent implements OnInit {
     this.router.navigateByUrl(`/properties/edit/${property.id}`);
   }
 
-  goBack(): void {
-    this.location.back();
+  goBack() {
+    this.router.navigateByUrl('/dashboard');
   }
 
 }

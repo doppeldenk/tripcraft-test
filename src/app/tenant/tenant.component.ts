@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { Location } from '@angular/common';
 
 import Tenant from '../classes/tenant';
 import { TenantService } from '../services/tenant.service';
@@ -18,8 +17,7 @@ export class TenantComponent implements OnInit {
     private tenantService: TenantService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private userService: UserService,
-    private location: Location
+    private userService: UserService
 ) { }
 
   ngOnInit() {
@@ -42,7 +40,7 @@ export class TenantComponent implements OnInit {
   }
 
   goBack() {
-    this.location.back();
+    this.router.navigateByUrl('/tenants');
   }
 
 }

@@ -1,38 +1,40 @@
 <div *ngIf="!tenant" class="alert alert-info" role="alert">
   Loading...
 </div>
-<table *ngIf="tenant" class="table table-striped">
-  <tbody>
-    <tr>
-      <td>
-        ID:
-      </td>
-      <td>
-        {{tenant.id}}
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Name:
-      </td>
-      <td>
-        {{tenant.name}}
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Subdomain:
-      </td>
-      <td>
-        {{tenant.subdomain}}
-      </td>
-    </tr>
-  </tbody>
-</table>
-<button
-  (click)="goBack()"
-  type="button"
-  class="btn btn-alert float-right"
->
-  Go back
-</button>
+<div *ngIf="tenant">
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td>
+          ID:
+        </td>
+        <td>
+          {{tenant.id}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Name:
+        </td>
+        <td>
+          {{tenant.name}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Subdomain:
+        </td>
+        <td>
+          {{tenant.subdomain}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button
+    (click)="goBack()"
+    type="button"
+    class="btn btn-info float-right"
+  >
+    Go back
+  </button>
+</div>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { Location } from '@angular/common';
 
 import Property from '../classes/property';
 import { PropertyService } from '../services/property.service';
@@ -18,8 +17,7 @@ export class PropertyFormComponent implements OnInit {
   constructor(
     private propertyService: PropertyService,
     private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private location: Location,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -52,8 +50,8 @@ export class PropertyFormComponent implements OnInit {
     }
   }
 
-  goBack(): void {
-    this.location.back();
+  goBack() {
+    this.router.navigateByUrl('/properties');
   }
 
 }

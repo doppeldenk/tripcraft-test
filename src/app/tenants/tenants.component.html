@@ -1,30 +1,33 @@
 <div *ngIf="!tenants" class="alert alert-info" role="alert">
   Loading...
 </div>
-<table *ngIf="tenants && tenants.length" class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Subdomain</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let tenant of tenants">
-      <th scope="row">{{tenant.id}}</th>
-      <td>{{tenant.name}}</td>
-      <td>{{tenant.subdomain}}</td>
-      <td>
-        <a routerLink="/tenants/{{tenant.id}}">View</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<button
-  (click)="goBack()"
-  type="button"
-  class="btn btn-alert float-right"
->
-  Go back
-</button>
+<div *ngIf="tenants && tenants.length">
+  <button
+    (click)="goBack()"
+    type="button"
+    class="btn btn-info float-right"
+  >
+    Go back
+  </button>
+  <br /><br />
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Subdomain</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tenant of tenants">
+        <th scope="row">{{tenant.id}}</th>
+        <td>{{tenant.name}}</td>
+        <td>{{tenant.subdomain}}</td>
+        <td>
+          <a routerLink="/tenants/{{tenant.id}}">View</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
